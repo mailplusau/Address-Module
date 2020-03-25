@@ -6,8 +6,8 @@
 	 *
 	 * Remarks: To fix addresses that doesnt have Lat/Lng fields filled       
 	 * 
-	 * @Last Modified by:   ankith.ravindran
-	 * @Last Modified time: 2018-09-03 10:13:42
+	 * @Last Modified by:   Ankith
+	 * @Last Modified time: 2020-03-16 10:46:53
 	 *
 	 */
 
@@ -68,7 +68,7 @@
 
 						if (!isNullorEmpty(fullAddress)) {
 
-							var result = nlapiRequestURL('https://maps.googleapis.com/maps/api/geocode/json?address=' + fullAddress + '&key=AIzaSyCa0FrFI1Y4k8fkD-x-Q5D1mzT2gifItOg&libraries=places');
+							var result = nlapiRequestURL('https://maps.googleapis.com/maps/api/geocode/json?address=' + fullAddress + '&key=AIzaSyA92XGDo8rx11izPYT7z2L-YPMMJ6Ih1s0&libraries=places');
 
 
 							var resultJSON = JSON.parse(result.getBody());
@@ -119,7 +119,7 @@
 							} else {
 								var subrecord = customer_record.editCurrentLineItemSubrecord('addressbook', 'addressbookaddress');
 
-								subrecord.setFieldValue('custrecord_addrsub_geocode', 'X');
+								subrecord.setFieldValue('custrecord_addrsub_geocode', '');
 
 								subrecord.commit();
 								customer_record.commitLineItem('addressbook');
@@ -172,7 +172,7 @@
 					}
 				}
 			}
-			nlapiSubmitRecord(customer_record);
+			nlapiSubmitRecord(customer_record,false,true);
 			// }
 
 
