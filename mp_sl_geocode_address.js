@@ -4,8 +4,8 @@
  * NSVersion    Date            Author         Remarks
  * 1.00       2017-10-17 11:20:36   Ankith         Suitelet to set the GeoCode of addresses
  * 
- * @Last Modified by:   mailplusar
- * @Last Modified time: 2019-05-07 10:22:48
+ * @Last Modified by:   Ankith
+ * @Last Modified time: 2020-03-12 11:24:52
  *
  */
 
@@ -176,6 +176,7 @@ function geoCodeAddress() {
 		}
 		nlapiSetRedirectURL('SUITELET', 'customscript_sl_create_new_ncl', 'customdeploy_sl_create_new_ncl', null, params2);
 	} else {
+		nlapiLogExecution('DEBUG', 'script_id', script_id)
 		nlapiSetRedirectURL('SUITELET', script_id, deploy_id, null, params2);
 	}
 
