@@ -222,7 +222,7 @@ $(document).on('change', '.postal_location', function(e) {
     var fields = ['custrecord_ap_lodgement_suburb',
       'custrecord_ap_lodgement_postcode', 'custrecord_ap_lodgement_addr2',
       'custrecord_ap_lodgement_site_name', 'custrecord_ap_lodgement_lat',
-      'custrecord_ap_lodgement_long', 'custrecord_ncl_mailing_postcode'
+      'custrecord_ap_lodgement_long'
     ];
     var results_state = nlapiLookupField(
       'customrecord_ap_lodgment_location', corporate_office_internal_id,
@@ -234,7 +234,9 @@ $(document).on('change', '.postal_location', function(e) {
     var locality = (results.custrecord_ap_lodgement_suburb);
 
     var zipcode = (results.custrecord_ap_lodgement_postcode);
-    var mailingcode = (results.custrecord_ncl_mailing_postcode);
+    // var mailingcode = (results.custrecord_ncl_mailing_postcode);
+
+    var mailingcode = zipcode;
 
     var address2 = (results.custrecord_ap_lodgement_addr2);
 
